@@ -46,7 +46,6 @@ import org.videolan.tools.*
 import org.videolan.vlc.BuildConfig
 import org.videolan.vlc.R
 import org.videolan.vlc.StartActivity
-import org.videolan.vlc.donations.VLCBilling
 import org.videolan.vlc.extensions.ExtensionManagerService
 import org.videolan.vlc.extensions.ExtensionsManager
 import org.videolan.vlc.gui.audio.AudioBrowserFragment
@@ -94,8 +93,6 @@ class MainActivity : ContentActivity(),
         scanNeeded = savedInstanceState == null && settings.getBoolean(KEY_MEDIALIBRARY_AUTO_RESCAN, true)
         if (BuildConfig.DEBUG) extensionsManager = ExtensionsManager.getInstance()
         mediaLibrary = Medialibrary.getInstance()
-
-        VLCBilling.getInstance(application).retrieveSkus()
     }
 
 
@@ -205,7 +202,6 @@ class MainActivity : ContentActivity(),
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (VLCBilling.getInstance(this.application).iabHelper.handleActivityResult(requestCode, resultCode, data)) return
         if (requestCode == ACTIVITY_RESULT_PREFERENCES) {
             when (resultCode) {
                 RESULT_RESCAN -> this.reloadLibrary()

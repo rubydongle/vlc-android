@@ -151,8 +151,9 @@ android {
 
 dependencies {
     implementation project(':application:vlc-android')
-    implementation project(':application:television')
-    testImplementation project(':application:television')
+//    implementation project(':application:television')
+//    testImplementation project(':application:television')
+    api project(':application:moviepedia')
 
     androidTestApi "androidx.test.espresso:espresso-contrib:$rootProject.espressoVersion"
     androidTestApi "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"

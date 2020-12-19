@@ -1,4 +1,4 @@
-package org.videolan.mobile.app.delegates
+package com.dongle.mobile.app.delegates
 
 import android.content.BroadcastReceiver
 import android.content.Context

@@ -70,8 +70,10 @@
             android:name="android.allow_multiple_resumed_activities"
             android:value="true" />
 
+<!--        <activity-->
+<!--            android:name=".StartActivity"-->
         <activity
-            android:name=".StartActivity"
+            android:name="com.dongle.player.PlayerStartActivity"
             android:theme="@style/Theme.VLC.Transparent.NoUI">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -461,8 +463,10 @@
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable"/>
         </activity>
+<!--        <activity-->
+<!--            android:name=".gui.onboarding.OnboardingActivity"-->
         <activity
-            android:name=".gui.onboarding.OnboardingActivity"
+            android:name="com.dongle.player.gui.onboarding.OnboardingActivity"
             android:theme="@style/Theme.VLC.Onboarding"/>
         <activity
             android:name=".gui.SecondaryActivity"

@@ -35,7 +35,7 @@ const val ONBOARDING_DONE_KEY = "app_onboarding_done"
 
 @ObsoleteCoroutinesApi
 @ExperimentalCoroutinesApi
-class OnboardingActivity : AppCompatActivity(), ViewPager.OnPageChangeListener, IOnScanningCustomizeChangedListener {
+class PlayerOnboardingActivity : AppCompatActivity(), ViewPager.OnPageChangeListener, IOnScanningCustomizeChangedListener {
 
     private lateinit var viewPager: NonSwipeableViewPager
 
@@ -121,7 +121,7 @@ class OnboardingActivity : AppCompatActivity(), ViewPager.OnPageChangeListener, 
         }
         if (!viewModel.scanStorages) MediaParsingService.preselectedStorages.clear()
         startMedialibrary(firstRun = true, upgrade = true, parse = viewModel.scanStorages)
-        val intent = Intent(this@OnboardingActivity, MainActivity::class.java)
+        val intent = Intent(this@PlayerOnboardingActivity, MainActivity::class.java)
                 .putExtra(EXTRA_FIRST_RUN, true)
                 .putExtra(EXTRA_UPGRADE, true)
         startActivity(intent)
@@ -217,4 +217,4 @@ class OnboardingActivity : AppCompatActivity(), ViewPager.OnPageChangeListener, 
 
 @ExperimentalCoroutinesApi
 @ObsoleteCoroutinesApi
-fun Activity.startOnboarding() = startActivityForResult(Intent(this, OnboardingActivity::class.java), ACTIVITY_RESULT_PREFERENCES)
+fun Activity.startOnboarding() = startActivityForResult(Intent(this, PlayerOnboardingActivity::class.java), ACTIVITY_RESULT_PREFERENCES)

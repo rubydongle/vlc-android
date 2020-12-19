@@ -466,7 +466,7 @@
 <!--        <activity-->
 <!--            android:name=".gui.onboarding.OnboardingActivity"-->
         <activity
-            android:name="com.dongle.player.gui.onboarding.OnboardingActivity"
+            android:name="com.dongle.player.gui.onboarding.PlayerOnboardingActivity"
             android:theme="@style/Theme.VLC.Onboarding"/>
         <activity
             android:name=".gui.SecondaryActivity"
